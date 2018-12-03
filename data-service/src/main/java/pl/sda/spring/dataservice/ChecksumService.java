@@ -5,16 +5,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 @AllArgsConstructor
-public class ChecksumService {
+class ChecksumService {
 
-    String url;
+    String serviceUrl;
 
     RestTemplate restTemplate;
 
-    public boolean isChecksumCorrect(String number) {
+    boolean isChecksumCorrect(String number) {
 
         ResponseEntity<ChecksumValidatorResponse> response =
-                restTemplate.getForEntity(url + "/checksum/" + number,
+                restTemplate.getForEntity(serviceUrl + number,
                         ChecksumValidatorResponse.class);
         return response.getBody().isCheckSumCorrect();
     }

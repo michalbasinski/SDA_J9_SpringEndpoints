@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 @AllArgsConstructor
-public class CardIssuerService {
+class CardIssuerService {
 
     private String serviceUrl;
 
@@ -13,7 +13,7 @@ public class CardIssuerService {
 
     public String findIssuer(String number) {
         ResponseEntity<IssuerServiceResponse> responseEntity =
-                restTemplate.getForEntity(serviceUrl + "/issuer/" + number,
+                restTemplate.getForEntity(serviceUrl + number,
                         IssuerServiceResponse.class);
 
         return responseEntity.getBody().getIssuerName();

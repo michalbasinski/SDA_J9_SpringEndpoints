@@ -7,6 +7,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ChecksumValidatorResponse {
+class ChecksumValidatorResponse {
     boolean isCheckSumCorrect;
 }

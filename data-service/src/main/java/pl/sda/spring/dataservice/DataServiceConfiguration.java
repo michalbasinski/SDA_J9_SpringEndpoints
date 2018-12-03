@@ -8,20 +8,21 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 class DataServiceConfiguration {
 
+    //wartości zmiennych są ustawiane w czasie startu aplikacji na bazie ustawień z pliku application.properties
     @Value("${checksum.service.url}")
-    String url;
+    String checksumServiceUrl;
 
     @Value("${issuer.finder.service.url}")
-    String serviceUrl;
+    String issuerFinderServiceUrl;
 
     @Bean
     CardIssuerService cardIssuerService(RestTemplate restTemplate) {
-        return new CardIssuerService(url, restTemplate);
+        return new CardIssuerService(issuerFinderServiceUrl, restTemplate);
     }
 
     @Bean
     ChecksumService checksumService(RestTemplate restTemplate) {
-        return new ChecksumService(url, restTemplate);
+        return new ChecksumService(checksumServiceUrl, restTemplate);
     }
 
     @Bean
