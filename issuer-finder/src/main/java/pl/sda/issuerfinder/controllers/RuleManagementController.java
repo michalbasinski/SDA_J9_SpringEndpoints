@@ -1,6 +1,7 @@
 package pl.sda.issuerfinder.controllers;
 
-import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,15 +10,15 @@ import pl.sda.issuerfinder.dto.IssuerRuleDto;
 import pl.sda.issuerfinder.model.IssuerFinderService;
 
 @RestController
-@NoArgsConstructor
+@AllArgsConstructor
 public class RuleManagementController {
 
     private IssuerFinderService issuerFinderService;
 
     @PostMapping("/rules")
     public ResponseEntity addRule(@RequestBody IssuerRuleDto issuerRuleDto) {
-        issuerFinderService.addIssuerRule(issuerRuleDto);
-        return null;
+        IssuerRuleDto result = issuerFinderService.addIssuerRule(issuerRuleDto);
+        return new ResponseEntity(result, HttpStatus.OK);
     }
 
 }
