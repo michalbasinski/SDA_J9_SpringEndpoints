@@ -8,5 +8,5 @@ import lombok.Setter;
 @Getter
 @Setter
 class ChecksumValidatorResponse {
-    boolean isCheckSumCorrect;
+    boolean isCorrect;
 }

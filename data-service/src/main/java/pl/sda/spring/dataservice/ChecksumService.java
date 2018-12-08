@@ -16,6 +16,6 @@ class ChecksumService {
         ResponseEntity<ChecksumValidatorResponse> response =
                 restTemplate.getForEntity(serviceUrl + number,
                         ChecksumValidatorResponse.class);
-        return response.getBody().isCheckSumCorrect();
+        return response.getBody().isCorrect();
     }
 }
