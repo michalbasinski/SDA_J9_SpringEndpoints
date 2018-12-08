@@ -1,4 +1,4 @@
-package pl.sda.issuerfinder;
+package pl.sda.issuerfinder.dto;
 
 import lombok.Value;
 

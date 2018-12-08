@@ -1,6 +1,7 @@
-package pl.sda.issuerfinder;
+package pl.sda.issuerfinder.model;
 
 import lombok.AllArgsConstructor;
+import pl.sda.issuerfinder.dto.IssuerDto;
 
 import java.util.List;
 

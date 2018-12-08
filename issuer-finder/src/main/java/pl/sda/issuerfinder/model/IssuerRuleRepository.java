@@ -1,4 +1,4 @@
-package pl.sda.issuerfinder;
+package pl.sda.issuerfinder.model;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
